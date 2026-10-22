@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PharmacyOS Downloads</title>
+<meta name="description" content="Download PharmacyOS for Windows, macOS and Android.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f7f7; --surface: #ffffff; --border: #dfe6e6; --text: #142024;
+    --muted: #55656a; --primary: #0f766e; --primary-ink: #ffffff; --soft: #e3f2f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11181b; --surface: #182125; --border: #2a363a; --text: #e6eeee;
+      --muted: #9fb0b3; --primary: #4fc9b8; --primary-ink: #0b1714; --soft: #17302d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.55 "Noto Sans", "Noto Sans Arabic", system-ui, sans-serif; }
+  html[lang=ar] body { font-family: "Noto Sans Arabic", "Noto Sans", system-ui, sans-serif; }
+  html[lang=en] [data-ar], html[lang=ar] [data-en] { display: none !important; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { display: flex; align-items: center; gap: 12px; }
+  .mark { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 70%, #000));
+    color: var(--primary-ink); font-weight: 600; font-size: 22px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  .lang { margin-inline-start: auto; background: var(--surface); color: var(--text);
+    border: 1px solid var(--border); border-radius: 10px; padding: 8px 14px; font: inherit; cursor: pointer; }
+  .lead { color: var(--muted); margin: 20px 0 4px; max-width: 60ch; }
+  .version { color: var(--muted); margin: 0 0 24px; }
+  .version b { color: var(--text); font-weight: 600; margin-inline-start: 6px; }
+  .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .card.mine { border-color: var(--primary); box-shadow: 0 0 0 3px var(--soft); }
+  .card-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card h2 { font-size: 18px; margin: 0; font-weight: 600; }
+  .pill { display: none; font-size: 12px; background: var(--soft); color: var(--primary);
+    border-radius: 999px; padding: 2px 10px; font-weight: 500; }
+  .card.mine .pill { display: inline-block; }
+  html[lang=en] .card.mine .pill[data-ar], html[lang=ar] .card.mine .pill[data-en] { display: none; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px;
+    background: var(--primary); color: var(--primary-ink); text-decoration: none; border-radius: 12px;
+    font-weight: 600; padding: 10px 16px; }
+  .btn:focus-visible, .lang:focus-visible, a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round; }
+  .btn small { font-weight: 400; opacity: .85; }
+  .how { margin: 0; color: var(--muted); font-size: 14px; }
+  .file { margin: 0; font-size: 12px; color: var(--muted); word-break: break-all; }
+  .notes, .history, .empty { margin-top: 32px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 20px; }
+  h3 { margin: 0 0 12px; font-size: 16px; font-weight: 600; }
+  pre { white-space: pre-wrap; margin: 0; font: inherit; color: var(--muted); }
+  ul { margin: 0; padding-inline-start: 18px; color: var(--muted); }
+  li { margin: 6px 0; } li a { color: var(--primary); margin-inline-start: 8px; }
+  footer { margin-top: 32px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--primary); }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="mark" aria-hidden="true">+</div>
+      <h1>PharmacyOS</h1>
+      <button class="lang" type="button" id="lang">العربية</button>
+    </header>
+    <p class="lead" data-en>Pharmacy point of sale, stock and reports. Works offline. Download the app for your device.</p>
+    <p class="lead" data-ar>نقطة بيع ومخزون وتقارير للصيدليات، تعمل بدون إنترنت. نزّل التطبيق المناسب لجهازك.</p>
+
+    <section class="empty"><p data-en>The first release is on its way. Check back soon.</p>
+      <p data-ar>أول إصدار في الطريق. عُد قريبًا.</p></section>
+    <footer>
+      <span data-en>Installed apps tell you when a newer version is published here.</span>
+      <span data-ar>التطبيق المثبّت يخبرك عند نشر إصدار أحدث هنا.</span>
+      · <a href="https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases">GitHub releases</a>
+    </footer>
+  </main>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('lang');
+    function set(l) {
+      root.lang = l; root.dir = l === 'ar' ? 'rtl' : 'ltr';
+      btn.textContent = l === 'ar' ? 'English' : 'العربية';
+      try { localStorage.setItem('lang', l); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    set(saved || ((navigator.language || '').indexOf('ar') === 0 ? 'ar' : 'en'));
+    btn.onclick = function () { set(root.lang === 'ar' ? 'en' : 'ar'); };
+    var ua = navigator.userAgent, mine = /Android/i.test(ua) ? 'android'
+      : /Mac/i.test(ua) ? 'macos' : /Win/i.test(ua) ? 'windows' : null;
+    var card = mine && document.querySelector('[data-platform="' + mine + '"]');
+    if (card) { card.classList.add('mine'); card.parentNode.prepend(card); }
+  })();
+</script>
+</body>
+</html>
