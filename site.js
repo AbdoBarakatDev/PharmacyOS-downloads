@@ -51,6 +51,53 @@
     } catch (e) {}
   }
 
+  // See it in action: tabs (arrow keys move between them) and the gallery.
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role=tab]'));
+  function show(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(t); });
+    t.addEventListener('keydown', function (ev) {
+      var step = { ArrowRight: 1, ArrowLeft: -1 }[ev.key];
+      if (!step) return;
+      if (root.dir === 'rtl') step = -step;
+      var next = tabs[(i + step + tabs.length) % tabs.length];
+      show(next); next.focus(); ev.preventDefault();
+    });
+  });
+  // #panel-owner or #panel-scanner opens that tab (shareable links).
+  var deep = (location.hash.match(/^#panel-(pos|owner|scanner)$/) || [])[1];
+  if (deep) {
+    show(document.getElementById('tab-' + deep));
+    var target = document.getElementById('preview');
+    if (target) target.scrollIntoView();
+  }
+  document.querySelectorAll('[data-show]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var t = document.getElementById('tab-' + a.getAttribute('data-show'));
+      if (t) show(t);
+    });
+  });
+  document.querySelectorAll('[data-go]').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var id = chip.getAttribute('data-go');
+      document.querySelectorAll('[data-slide]').forEach(function (f) {
+        f.classList.toggle('on', f.getAttribute('data-slide') === id);
+      });
+      document.querySelectorAll('[data-go]').forEach(function (c) {
+        c.classList.toggle('on', c === chip);
+        c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+      });
+    });
+  });
+
   var items = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
     items.forEach(function (el) { el.classList.add('in'); });

@@ -1,5 +1,34 @@
 [
   {
+    "version": "0.9.1",
+    "tag": "v0.9.1",
+    "published": "2026-10-31T20:08:59Z",
+    "prerelease": true,
+    "notes": "PharmacyOS 0.9.1 preview.\n\n- New PharmacyOS mark and app icons: a capsule replaces the plus/cross symbol, and the apps no longer show the default Flutter icon.\n- Pharmacy app and Owner app for macOS (Apple silicon) and Android; the phone scanner is the pharmacy app's Android file.\n- Preview builds connect to a PharmacyOS server on the same computer (the demo). Builds for the hosted service follow once it is online.\n- Windows and iPhone versions are coming.",
+    "files": {
+      "macos": {
+        "name": "PharmacyOS-0.9.1-dev-macos.dmg",
+        "size": 15540007,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.1/PharmacyOS-0.9.1-dev-macos.dmg"
+      },
+      "owner-macos": {
+        "name": "PharmacyOS-Owner-0.9.1-dev-macos.dmg",
+        "size": 12104669,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.1/PharmacyOS-Owner-0.9.1-dev-macos.dmg"
+      },
+      "android": {
+        "name": "PharmacyOS-0.9.1-dev-android.apk",
+        "size": 100155403,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.1/PharmacyOS-0.9.1-dev-android.apk"
+      },
+      "owner-android": {
+        "name": "PharmacyOS-Owner-0.9.1-dev-android.apk",
+        "size": 76799555,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.1/PharmacyOS-Owner-0.9.1-dev-android.apk"
+      }
+    }
+  },
+  {
     "version": "0.9.0",
     "tag": "v0.9.0",
     "published": "2026-10-31T13:33:44Z",
