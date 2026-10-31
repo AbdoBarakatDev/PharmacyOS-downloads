@@ -1,1 +1,31 @@
-[]
+[
+  {
+    "version": "0.9.0",
+    "tag": "v0.9.0",
+    "published": "2026-10-31T13:33:44Z",
+    "prerelease": true,
+    "notes": "PharmacyOS 0.9.0 preview: the pharmacy app, the Owner app and the phone scanner.\n\n- Pharmacy app and Owner app for macOS (Apple silicon) and Android.\n- Phone scanner: install the Android app, tap \"Use this phone as a scanner for a computer\", and scan the pairing code on the computer (This device → Scanner). The pairing screen now also shows a QR to download this app.\n- Preview builds connect to a PharmacyOS server on the same computer (the demo). Builds for the hosted service follow once it is online.\n- Windows and iPhone versions are coming.",
+    "files": {
+      "macos": {
+        "name": "PharmacyOS-0.9.0-dev-macos.dmg",
+        "size": 15462076,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.0/PharmacyOS-0.9.0-dev-macos.dmg"
+      },
+      "owner-macos": {
+        "name": "PharmacyOS-Owner-0.9.0-dev-macos.dmg",
+        "size": 12029426,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.0/PharmacyOS-Owner-0.9.0-dev-macos.dmg"
+      },
+      "android": {
+        "name": "PharmacyOS-0.9.0-dev-android.apk",
+        "size": 100130803,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.0/PharmacyOS-0.9.0-dev-android.apk"
+      },
+      "owner-android": {
+        "name": "PharmacyOS-Owner-0.9.0-dev-android.apk",
+        "size": 76774955,
+        "url": "https://github.com/AbdoBarakatDev/PharmacyOS-downloads/releases/download/v0.9.0/PharmacyOS-Owner-0.9.0-dev-android.apk"
+      }
+    }
+  }
+]
