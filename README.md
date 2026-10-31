@@ -2,7 +2,7 @@
 
 The PharmacyOS suite: the pharmacy app, the Owner app and the phone scanner.
 
-**https://abdobarakatdev.github.io/PharmacyOS-downloads/**
+**https://abdobarakatdev.github.io/PharmacyOS-downloads/** · also on Firebase: **https://pharmacyos-downloads.web.app**
 
 - Phone scanner (Android): https://abdobarakatdev.github.io/PharmacyOS-downloads/scanner/
 - All files: [Releases](../../releases)

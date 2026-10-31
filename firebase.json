@@ -5,6 +5,7 @@
       "firebase.json",
       ".firebaserc",
       "**/.*",
+      "**/.*/**",
       "README.md"
     ],
     "cleanUrls": true,

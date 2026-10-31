@@ -34,7 +34,14 @@
   }
 
   // The scanner page's QR, drawn here so it never goes stale.
+  // The same page is served by GitHub Pages and by Firebase (D-187): the
+  // QR and the link follow the address it was opened from.
   var box = document.getElementById('scanner-qr');
+  var link = document.getElementById('scanner-link');
+  var here = location.protocol === 'https:'
+    ? new URL('scanner/', location.origin + location.pathname).href : null;
+  if (here && box) box.setAttribute('data-url', here);
+  if (here && link) { link.href = here; link.textContent = here; }
   if (box && window.qrcode) {
     try {
       var q = window.qrcode(0, 'M');
